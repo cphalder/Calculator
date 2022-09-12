@@ -32,7 +32,7 @@ class Calculator {
   compute() {
     let computation;
     const prev = parseFloat(this.previousInput);
-    const current = parseFloat(this, this.currentInput);
+    const current = parseFloat(this.currentInput);
     if (isNaN(prev) || isNaN(current)) return;
     switch (this.operation) {
       case "+":
@@ -41,7 +41,7 @@ class Calculator {
       case "-":
         computation = prev - current;
         break;
-      case "*":
+      case "x":
         computation = prev * current;
         break;
       case "/":
@@ -104,11 +104,13 @@ equalButton.addEventListener("click", (button) => {
   calculator.compute();
   calculator.updateDisplay();
 });
-allClearButton.addEventListener("click", (button) => {
+
+clearButton.addEventListener("click", (button) => {
   calculator.clear();
   calculator.updateDisplay();
 });
-del.addEventListener("click", (button) => {
+
+deleteButton.addEventListener("click", (button) => {
   calculator.delete();
   calculator.updateDisplay();
 });
